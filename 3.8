@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int num1 = input.nextInt();
+        int num2 = input.nextInt();
+        int num3 = input.nextInt();
+
+        int great1 = 0;
+        int great2 = 0;
+        int great3 = 0;
+        if ((num1 > num2) && (num1 > num3)) {
+            great1 = num1;
+            if (num2 > num3) {
+                great2 = num2;
+                great3 = num3;
+            } else {
+                great2 = num3;
+                great3 = num2;
+            }
+        } else if ((num2 > num1) && (num2 > num3)) {
+            great1 = num2;
+            if(num1>num3){
+                great2 = num1;
+                great3 = num3;
+            }else{
+                great2 = num3;
+                great3 = num1;
+            }
+        }else{
+            great1 = num3;
+            if(num1>num2){
+                great2 = num1;
+                great3 = num2;
+            }else{
+                great2 = num2;
+                great3 = num1;
+            }
+        }
+
+        System.out.println(great1+" "+great2+" "+great3);
+    }
+}
