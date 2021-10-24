@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a three-digit integer: ");
+        int a = input.nextInt();
+        int remainder;
+        int num;
+        int result;
+        num = a / 100;
+        remainder = a % 100;
+        result = remainder%10;
+    System.out.println(num+" "+remainder+" "+result);
+
+        if(num==result){
+            System.out.println(a+" is a palindrome");
+        }else{
+            System.out.println(a+" is not  a palindrome");
+        }
+
+
+
+    }
+}
