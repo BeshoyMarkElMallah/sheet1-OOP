@@ -1,0 +1,17 @@
+public class Main {
+
+    public static void main(String[] args) {
+        int width = 100;
+        int height =200;
+        int coordinate = width +(int)( Math.random()*(height-width+1));
+
+        System.out.println("("+coordinate+","+coordinate+")");
+
+
+
+
+
+
+    }
+
+}
