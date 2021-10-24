@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number of students : ");
+        int numOfStudents = input.nextInt();
+        int[] scores = new int[numOfStudents];
+        char[] grades = new char[numOfStudents];
+        System.out.print("Enter " + numOfStudents + " scores: ");
+        for (int i = 0; i < scores.length; i++) {
+            scores[i] = input.nextInt();
+
+        }
+       haveGrades(scores,grades);
+
+        for (int i=0;i< scores.length;i++){
+            System.out.println("Student "+i+" score is "+scores[i]+" and grade is "+grades[i]);
+        }
+    }
+
+    public static int max(int[] scores) {
+        int highScore = scores[0];
+        for (int i = 0; i < scores.length; i++) {
+            if (scores[i] > highScore) {
+                highScore = scores[i];
+            }
+        }
+        return highScore;
+    }
+
+    public static void haveGrades(int[] scores, char[] grades) {
+        int best= max(scores);
+       for (int i=0 ; i< scores.length;i++){
+           if(scores[i]>=(best-10)){
+               grades[i]='A';
+           }else if (scores[i]>= (best-20)){
+               grades[i]='B';
+           }else if (scores[i]>= (best-30)){
+               grades[i]='C';
+           }else if (scores[i]>=(best-40)){
+               grades[i]= 'D';
+           }else{
+               grades[i]='F';
+           }
+       }
+    }
+}
